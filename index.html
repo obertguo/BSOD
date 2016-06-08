@@ -8,7 +8,7 @@
 		
 		<script>
 			$(document).ready(function(){
-			$(document).delegate('#textbox', 'keydown', function(e) {
+			$(document).delegate('#sourceCode', 'keydown', function(e) {
   var keyCode = e.keyCode || e.which;
 
   if (keyCode == 9) {
@@ -31,15 +31,31 @@
 		
 		<style type="text/css">
 			textarea, iframe {
-    			border: 2px solid #ddd;
+    			border: 1px solid black;
     			height: 500px;
     			width: 100%;	  
-                font-family: sans-serif;
+                font-family: arial,sans-serif;
                 font-size: 15px;
 			}
 			
 			body {
-				background-color:lightgray;
+				font-family: arial,sans-serif;
+			}
+			
+			iframe {
+				background-color:white;
+			}
+			.runCode {
+				   background-color: #4CAF50; /* Green */
+    border: 1px solid black;
+    color: white;
+    font-weight:bold;
+    text-decoration: underline;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 			}
     	</style>
 	</head>
@@ -48,7 +64,7 @@
             <tr>
                 <td width="50%" scope="col">&nbsp;</td>
                 <td width="50%" align="left" scope="col">
-                    <input onclick="runCode();" type="button" value="Run Code">
+                    <input onclick="runCode();" type="button" value="Run Code" class="runCode">
                 </td>
             </tr>
             <tr>
