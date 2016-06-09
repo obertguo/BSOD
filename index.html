@@ -6,7 +6,7 @@
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 		
-		<script>
+		<!--<script>
 			$(document).ready(function(){
 			$(document).delegate('#sourceCode', 'keydown', function(e) {
   var keyCode = e.keyCode || e.which;
@@ -28,6 +28,7 @@
 });
 			});
 		</script>
+		-->
 		
 		<style type="text/css">
 			textarea, iframe {
@@ -120,6 +121,21 @@ background-color: #4CAF50; /* Green */
                 return false;
             }
             runCode();
+        </script>
+        
+        <script>
+        	var textareas = document.getElementsByTagName('textarea');
+var count = textareas.length;
+for(var i=0;i<count;i++){
+    textareas[i].onkeydown = function(e){
+        if(e.keyCode==9 || e.which==9){
+            e.preventDefault();
+            var s = this.selectionStart;
+            this.value = this.value.substring(0,this.selectionStart) + "\t" + this.value.substring(this.selectionEnd);
+            this.selectionEnd = s+1; 
+        }
+    }
+}
         </script>
     </body>
 </html>
