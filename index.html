@@ -1,141 +1,48 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>Try it yourself editor</title>
-		
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-		
-		<!--<script>
-			$(document).ready(function(){
-			$(document).delegate('#sourceCode', 'keydown', function(e) {
-  var keyCode = e.keyCode || e.which;
-
-  if (keyCode == 9) {
-    e.preventDefault();
-    var start = $(this).get(0).selectionStart;
-    var end = $(this).get(0).selectionEnd;
-
-    // set textarea value to: text before caret + tab + text after caret
-    $(this).val($(this).val().substring(0, start)
-                + "\t"
-                + $(this).val().substring(end));
-
-    // put caret at right position again
-    $(this).get(0).selectionStart =
-    $(this).get(0).selectionEnd = start + 1;
-  }
-});
-			});
-		</script>
-		-->
-		
-		<style type="text/css">
-			textarea, iframe {
-    			border: 1px solid black;
-    			height: 500px;
-    			width: 100%;	  
-                font-family: arial,sans-serif;
-                font-size: 15px;
-			}
-			
-			body {
-				font-family: arial,sans-serif;
-				background-color:#F7F7F7;
-			}
-			
-			iframe {
-				
-			}
-			.runCode{
-background-color: #4CAF50; /* Green */
-    border: 1px solid black;
-    color: white;
-    font-weight:bold;
-    text-decoration: underline;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin-left:-150px;
-    margin-bottom:-60px;
-    transition: all 0.3s ease-in-out;
-			}
-			
-			.runCode:hover {
-				    border: 1px solid black;
-				    transition: all 0.3s ease-in-out;
-    color: #4CAF50;
-    background-color:white;
-    font-weight:bold;
-    text-decoration: underline;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-			}
-    	</style>
-	</head>
+    <head>
+        <title>Windows Crashed</title>
+        <link rel = "stylesheet" href="style.css" type="text/css">
+    </head>
+    
     <body>
-        <table width="100%" border="0" cellspacing="5" cellpadding="5">
-            <tr>
-                <td width="50%" scope="col">&nbsp;</td>
-                <td width="50%" align="left" scope="col">
-                    <input onclick="runCode();" type="button" value="Run Code >>" class="runCode">
-                </td>
-            </tr>
-            <tr>
-                <td> 
-                    <form>
-                        <strong>Code</strong>
-                        <textarea name="sourceCode" id="sourceCode">
-			<!DOCTYPE HTML>
-			<html>
-				<head>
-					<style>
-							
-					</style>
-				</head>		
-					
-				<body>
-						
-				</body>
-			</html>
-                        </textarea>
-                    </form>
-                </td>
-                <td><strong>Output</strong><iframe name="targetCode" id="targetCode"></iframe></td>
-            </tr>
-        </table>  
-        <script type="text/javascript">
-            function runCode()
-            {
-                var content = document.getElementById('sourceCode').value;
-                var iframe = document.getElementById('targetCode');
-                iframe = (iframe.contentWindow) ? iframe.contentWindow : (iframe.contentDocument.document) ? iframe.contentDocument.document : iframe.contentDocument;
-                iframe.document.open();
-                iframe.document.write(content);
-                iframe.document.close();
-                return false;
-            }
-            runCode();
-        </script>
-        
-        <script>
-        	var textareas = document.getElementsByTagName('textarea');
-var count = textareas.length;
-for(var i=0;i<count;i++){
-    textareas[i].onkeydown = function(e){
-        if(e.keyCode==9 || e.which==9){
-            e.preventDefault();
-            var s = this.selectionStart;
-            this.value = this.value.substring(0,this.selectionStart) + "\t" + this.value.substring(this.selectionEnd);
-            this.selectionEnd = s+1; 
-        }
-    }
-}
-        </script>
+        <div class = "wrap">
+        <center>
+            <span class = "windows">
+                <p>Windows</p>
+            </span>
+            
+            <br>
+            <br>
+            <br>
+            
+            <div class = "centerwrap">
+                <center>
+        <p><b>A problem has been detected and windows has been shut down to prevent damage to your computer.
+            <br>
+            <br>
+            
+*** STOP: 0xFFFFFFFF (0xFFFFFFFF, 0xUUUUUUUU, 0xUUUUUUUU, 0xUUUUUUUU)
+            <br>
+            <br>
+            <br>
+
+* Press any key to terminate the current application.
+            <br>
+
+* Press CTRL+ALT+DELETE again to restart your computer. You will lose any unsaved information in all applications.
+            <br>
+            <br>
+            <br>
+            </b></p>
+                    </center>
+            </div>
+        </center>
+        </div>
+        <center>
+        <span class = "key">
+            <p><b>Press any key to continue</b></p>&nbsp;<span class="blink_text">-</span>
+                    </span>
+            </center>
     </body>
 </html>
